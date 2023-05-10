@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login">
+
+    <EditText
+        android:id="@+id/mail_signup_text"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="343dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/edit_text_shape"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:text="@string/mail"
+        android:textColor="#D4D4D4"
+        app:layout_constraintBottom_toTopOf="@+id/pass_signup_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/pass_signup_text"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="101dp"
+        android:background="@drawable/edit_text_shape"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:text="@string/pass"
+        android:textColor="#D4D4D4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mail_signup_text" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/signup_button_signup"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="98dp"
+        android:layout_marginBottom="230dp"
+        android:background="@drawable/button_shape"
+        android:text="@string/sign_up"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pass_signup_text"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="769dp"
+        android:layout_height="625dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/login_circle_container_shape"
+        app:layout_constraintBottom_toTopOf="@+id/mail_signup_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="256dp"
+            android:layout_marginTop="217dp"
+            android:layout_marginEnd="257dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/login_app_image_container_shape"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.141"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.384">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="121dp"
+                android:layout_height="134dp"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/veg_icon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

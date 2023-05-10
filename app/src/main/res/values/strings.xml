@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Nutrition App</string>
+    <string name="welcome">Hoş Geldiniz</string>
+    <string name="login">Giriş</string>
+    <string name="sign_up">Kayıt Ol</string>
+    <string name="forget_pass">Parola Sıfırla</string>
+    <string name="mail">mail</string>
+    <string name="pass">password</string>
+
+
+</resources>
