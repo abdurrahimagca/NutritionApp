@@ -56,6 +56,7 @@ public class SignUp extends AppCompatActivity {
 
                 }
                 else{
+                    ///
                     //
                     Toast.makeText(SignUp.this, "mail adresi ve en az altı haneli bir şifre kullanınız", Toast.LENGTH_SHORT).show();
                 }
