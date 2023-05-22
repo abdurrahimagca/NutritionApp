@@ -6,6 +6,24 @@
     <string name="forget_pass">Parola Sıfırla</string>
     <string name="mail">mail</string>
     <string name="pass">password</string>
+    <string name="repasts">Öğünler</string>
+    <string name="portion">Porsiyon</string>
+
+    <string-array name="repast">
+        <item>Kahvaltı</item>
+
+        <item>Öğle Yemeği</item>
+
+        <item>Akşam Yemeği</item>
+        <item>Atıştırma</item>
+
+    </string-array>
+    <string-array name="recommendation">
+        <item>Önerilen: ..Kcal </item>
+        <item>Önerilen: ..Kcal </item>
+        <item>Önerilen: ..Kcal </item>
+        <item>Önerilen: ..Kcal </item>
+    </string-array>
 
 
 </resources>
