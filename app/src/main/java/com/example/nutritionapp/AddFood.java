@@ -2,11 +2,16 @@ package com.example.nutritionapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -20,17 +25,21 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class AddFood extends AppCompatActivity implements RvInterface {
     RecyclerView recyclerView;
     DatabaseReference databaseReference;
     AddFoodAdapter addFoodAdapter;
     ArrayList<FoodModel> foodModels;
+    ImageButton addFoodDatabase;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.activity_add_food);
         TextView textView = findViewById(R.id.repast_menu_tv);
         String pathString = getIntent().getStringExtra("repastVal");
@@ -59,6 +68,7 @@ public class AddFood extends AppCompatActivity implements RvInterface {
 
 
                     FoodModel foodModel =dataSnapshot.getValue(FoodModel.class);
+
                     foodModels.add(foodModel);
                     System.out.println("food : "  + foodModels);
                 }
@@ -70,8 +80,20 @@ public class AddFood extends AppCompatActivity implements RvInterface {
 
             }
         });
+        addFoodDatabase = (ImageButton) findViewById(R.id.add_food_to_database);
+        addFoodDatabase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddFood.this,AddFoodDatabase.class);
+                intent.putExtra("repastNameToDatabase", pathString);
+                startActivity(intent);
+
+            }
+        });
+
 
     }
+
 
 
     @Override
@@ -100,15 +122,7 @@ public class AddFood extends AppCompatActivity implements RvInterface {
                 System.out.println(updatedKcal);
                 databaseReference.child(date).child("kcal").setValue(updatedKcal);
 
-
-
-               /* dailyKcalModel.setKcal(updatedKcal);
-                System.out.println(dailyKcalModel.getKcal());
-                kcalModelMap.put(date,dailyKcalModel);
-                databaseReference.child(date).updateChildrenAsync(kcalModelMap);*/
-
-
-            }
+                }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -118,8 +132,6 @@ public class AddFood extends AppCompatActivity implements RvInterface {
 
 
 
-
-        //store data in cloud
 
 
 
